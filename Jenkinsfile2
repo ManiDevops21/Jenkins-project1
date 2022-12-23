@@ -1,0 +1,13 @@
+Jenkinsfile (Declarative Pipeline)
+pipeline {
+    agent {
+        docker { image 'puppet/puppet-agent' }
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'puppet --version'
+            }
+        }
+    }
+}
