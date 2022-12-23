@@ -4,20 +4,20 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                 'sudo yum -y install http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm'
-	         'sudo yum -y install puppet' 
+                 //'sudo yum -y install http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm'
+	         //'sudo yum -y install puppet' 
             }
         }
         stage('Test') { 
             steps {
-                 sh 'systemctl status puppet'
+                sh 'systemctl status puppet'
             }
         }
         stage('Config') { 
             steps {
-                'puppet agent --test --ca_server=puppet.example.com'
-		'puppetserver ca list'
-		'puppetserver ca sign --certname server1'
+                //'puppet agent --test --ca_server=puppet.example.com'
+		//'puppetserver ca list'
+		//'puppetserver ca sign --certname server1'
             }
         }
     }
