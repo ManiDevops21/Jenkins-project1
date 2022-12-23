@@ -12,13 +12,6 @@ pipeline {
             steps {
                 sh 'systemctl status puppet'
             }
-        }
-        stage('Config') { 
-            steps {
-                //'puppet agent --test --ca_server=puppet.example.com'
-		//'puppetserver ca list'
-		//'puppetserver ca sign --certname server1'
-            }
-        }
+        }       
     }
 }
